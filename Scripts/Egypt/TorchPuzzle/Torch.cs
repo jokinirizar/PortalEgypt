@@ -22,15 +22,13 @@ public class Torch : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        //La forma correcta: El script del objeto tenga una variable que detecte si esta conectada
-        //Comprobar tag de objeto
-        GameObject Item = other.gameObject;
-        string ItemName = Item.name;
 
         //Comprobar si el objeto a snappear es el correcto en base a su name y el valor de count (0 palos, 1 bandeja, 2 leña)
         if (!IsFull)
         {
-                Rigidbody rb = other.GetComponent<Rigidbody>();
+            GameObject Item = other.gameObject;
+            string ItemName = Item.name;
+            Rigidbody rb = other.GetComponent<Rigidbody>();
                 if (ItemName == "Legs" && Count == 0)
                 {
                   
