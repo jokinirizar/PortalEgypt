@@ -1,9 +1,9 @@
-using Base;
+using Gameplay;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GemBagScript : BaseInteractable
+public class GemBagScript : InteractableObject
 {
     // Variables referentes al controlador del jugador
     [Header("Player settings")]

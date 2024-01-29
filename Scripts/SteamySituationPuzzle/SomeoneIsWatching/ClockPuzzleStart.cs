@@ -1,7 +1,7 @@
-using Base;
+using Gameplay;
 using UnityEngine;
 
-public class ClockPuzzleStart : BaseInteractable
+public class ClockPuzzleStart : InteractableObject
 {
 
     // Variables referentes al controlador del jugador
