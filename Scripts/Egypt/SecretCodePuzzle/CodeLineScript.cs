@@ -14,9 +14,13 @@ public class CodeLineScript : MonoBehaviour
     // Declare the event of type MyEventHandler
     public static event EventHandler OnFinish;
 
+    public delegate void EventHandlerInitialize(string lineName);
+
+    public static event EventHandlerInitialize OnStart;
+
     private void Start()
     {
-     foreach(GemSnap pedestal in Pedestals)
+        foreach (GemSnap pedestal in Pedestals)
         {
             Debug.Log("test");
             pedestal.gameObject.SetActive(true);
@@ -27,6 +31,10 @@ public class CodeLineScript : MonoBehaviour
     private void OnEnable()
     {
         PlacedGems = new List<GemStatus>();
+        if (OnStart != null)
+        {
+            OnStart(gameObject.name);
+        }
     }
 
     public void AddGem(GemStatus gem)

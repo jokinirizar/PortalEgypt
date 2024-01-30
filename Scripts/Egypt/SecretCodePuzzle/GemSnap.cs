@@ -42,26 +42,26 @@ public class GemSnap : MonoBehaviour
                 rb.isKinematic = true;
                 Gem.transform.position = transform.position;
                 Gem.layer = LayerMask.NameToLayer("PlacedGem");
+                Gem.GetComponent<Rigidbody>().useGravity = false;
                 //Vector3 position = Gem.transform.position;
                 Gem.GetComponent<PickableItem>().CurrentObject = null;
                 GameManager.instance.IsObjectPickedUp = false;
                 Gem.transform.parent = this.gameObject.transform;
                 Gem.GetComponent<Animator>().enabled = true;
+                other.gameObject.GetComponent<PickableItem>().IsPlaced = true;
                 //Gem.GetComponentInParent<Transform>().position = position;
                 //Gem.GetComponentInParent<Transform>().localScale = animToGemScale;
 
                 //Gem.GetComponent<BoxCollider>().enabled = false;
-                Gem.GetComponent<Rigidbody>().useGravity = false;
+
                 if (other.CompareTag(CorrectGem))
-                {
-                    other.gameObject.GetComponent<PickableItem>().IsPlaced = true;
+                {               
                     other.gameObject.GetComponent<GemStatus>().IsPlaced = true;
                     GemStatusScript.IsCorrectlyPlaced = true;
                     Line.GetComponent<CodeLineScript>().AddGem(GemStatusScript);
                 }
                 else
                 {
-                    other.gameObject.GetComponent<PickableItem>().IsPlaced = true;
                     Line.GetComponent<CodeLineScript>().AddGem(GemStatusScript);
                 }
                 GemIsSnapped = true;
