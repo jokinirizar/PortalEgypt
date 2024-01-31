@@ -13,6 +13,7 @@ public class PlayParticles : MonoBehaviour
 
     // Declare the event of type MyEventHandler
     public static event EventHandler OnParticlesStop;
+    public MaterialLerp script;
     private void Start()
     {
         CodeLineScript.OnStart += StartPlayingParticles;
@@ -21,6 +22,7 @@ public class PlayParticles : MonoBehaviour
     {
         if(transform.parent.transform.parent.gameObject.name == lineName)
         {
+            script.enabled = true;
             foreach (ParticleSystem particle in particles)
             {
                 particle.Play();
