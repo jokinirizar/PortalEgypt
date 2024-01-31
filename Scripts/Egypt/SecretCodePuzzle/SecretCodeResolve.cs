@@ -18,11 +18,16 @@ public class SecretCodeResolve : MonoBehaviour
     void Start()
     {
         // Step 5: Subscribe to the event in another script
-        CodeLineScript.OnFinish += MyEventHandlerMethod;
+        CodeLineScript.OnFinish += OnPuzzleLineResolve;
+        Crank.CrankEvent += OnCrankCranked;
+    }
+
+    private void OnCrankCranked()
+    {
         Lines[lineNumber].enabled = true;
     }
 
-    private void MyEventHandlerMethod(bool correct)
+    private void OnPuzzleLineResolve(bool correct)
     {
         if (correct)
         {
@@ -35,7 +40,7 @@ public class SecretCodeResolve : MonoBehaviour
         {
             if (lineNumber+1 == Lines.Count)
             {
-                CodeLineScript.OnFinish -= MyEventHandlerMethod;
+                CodeLineScript.OnFinish -= OnPuzzleLineResolve;
                 OnReset(gameObject);
             }
             else
@@ -66,7 +71,7 @@ public class SecretCodeResolve : MonoBehaviour
     void OnDestroy()
     {
         // Step 7: Unsubscribe when the subscriber is destroyed to prevent memory leaks
-        CodeLineScript.OnFinish -= MyEventHandlerMethod;
+        CodeLineScript.OnFinish -= OnPuzzleLineResolve;
     }
 
 
