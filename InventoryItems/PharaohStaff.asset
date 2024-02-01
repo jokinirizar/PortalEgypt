@@ -16,4 +16,5 @@ MonoBehaviour:
   _displayname: Pharaoh Staff
   _description: It looks like it's pretty worn out...
   _sprite: {fileID: 21300000, guid: 0e1540cc0456ce64181848b7b1cee6a3, type: 3}
-  _removeOnUse: 1
+  _removeFromInventoryOnUse: 1
+  _removeFromRequestOnUse: 1

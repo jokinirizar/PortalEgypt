@@ -12,8 +12,6 @@ public class Crank : InteractableObject
 
     protected override void OnActivate()
     {
-        //anim.Play()
-        //lol
-
+        //anim.Play();
     }
 }
