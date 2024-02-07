@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PuzzleReset : MonoBehaviour
 {
-
+    public List<int> adjacentTileChildPositions = new List<int>();
     public GameObject CompleteCode;
     void Start()
     {
@@ -23,9 +23,10 @@ public class PuzzleReset : MonoBehaviour
             {
                 Destroy(obj);
             }
-           
         }
+
     }
+   
 
     private void eventHandler(GameObject current)
     {
