@@ -19,8 +19,9 @@ public class SecretCodeResolve : MonoBehaviour
     {
         // Step 5: Subscribe to the event in another script
         CodeLineScript.OnFinish += OnPuzzleLineResolve;
-        Crank.CrankEvent += OnCrankCranked;
+        //Crank.CrankEvent += OnCrankCranked;
         Lines[lineNumber].enabled = true;
+        Debug.Log("isactivate");
     }
 
     private void OnCrankCranked()
