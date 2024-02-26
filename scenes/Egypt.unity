@@ -1191,6 +1191,12 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4068373912626513877, guid: 23b329970b7711b4db63eac427260661, type: 3}
+--- !u!1 &523349927 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1604905810889488947, guid: 0248cc5e6d94191428e67c46e928428d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1864615677}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &592680651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2981,10 +2987,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -9215562095460944903, guid: 9f708741f80531a46995b8a50c8c2f14,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2130877385}
-    - targetCorrespondingSourceObject: {fileID: -9215562095460944903, guid: 9f708741f80531a46995b8a50c8c2f14,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2130877386}
   m_SourcePrefab: {fileID: 100100000, guid: 9f708741f80531a46995b8a50c8c2f14, type: 3}
 --- !u!114 &1571447602 stripped
@@ -3919,6 +3921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsFull: 0
+  Fire: {fileID: 523349927}
 --- !u!1001 &1965667361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4495,12 +4498,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130877377}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2f46bf758b9b59448c5d69241edd5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Thrust: 175
+  sarcophagus: {fileID: 0}
+  activation: 0
+  movementSpeed: 0.001
+  goalPosition: 0.52
 --- !u!65 &2130877384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4522,23 +4528,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.07209455, y: 0.037857138, z: 0.24285257}
   m_Center: {x: -0.031551816, y: 0.019987242, z: 0}
---- !u!114 &2130877385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2130877377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe66178dc58d58245bb08d159126b582, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door: {fileID: 2130877377}
-  Activation: 1
-  IsFlipped: 0
-  movementSpeed: 0.001
-  goalPosition: 0.52
 --- !u!64 &2130877386
 MeshCollider:
   m_ObjectHideFlags: 0

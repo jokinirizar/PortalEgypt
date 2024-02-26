@@ -4,9 +4,10 @@ using UnityEngine;
 public class Torch : MonoBehaviour
 {
     public bool IsFull = false;
+    public GameObject Fire;
     private int Count = 0;
 
-    public delegate void EventHandler(string current);
+    public delegate void EventHandler();
 
     public static event EventHandler OnComplete;
 
@@ -22,7 +23,7 @@ public class Torch : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-
+        Debug.Log(Count + "---" + transform.childCount);
         //Comprobar si el objeto a snappear es el correcto en base a su name y el valor de count (0 palos, 1 bandeja, 2 leña)
         if (!IsFull)
         {
@@ -63,10 +64,13 @@ public class Torch : MonoBehaviour
                         Item.GetComponent<PickableItem>().IsPlaced = true;
                     }
                    
-                }else if (Count == transform.childCount)
+                } if (Count == transform.childCount-1)
             {
+                Debug.Log("completed");
                 IsFull = true;
-                //OnComplete("");
+                Fire.SetActive(true);
+                OnComplete();
+
             }
             
         }

@@ -13,7 +13,7 @@ public class Brazier : MonoBehaviour
         Torch.OnComplete += eventHandler;
     }
 
-    private void eventHandler(string a)
+    private void eventHandler()
     {
         FireOn();
     }
